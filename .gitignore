@@ -1,0 +1,16 @@
+# Ignore all CSV files
+data/*.csv
+
+# But DO include our sample file
+!data/student_sample.csv
+
+# Ignore .ods files (OpenDocument)
+data/*.ods
+
+# Ignore system files
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
