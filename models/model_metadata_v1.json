@@ -1,0 +1,13 @@
+{
+    "model_name": "Logistic Regression",
+    "optimal_threshold": 0.02553049013846136,
+    "performance": {
+        "recall": 1.0,
+        "precision": 0.3209764918625678,
+        "f1": 0.485968514715948,
+        "accuracy": 0.3209764918625678
+    },
+    "features_used": 38,
+    "training_samples": 3318,
+    "test_samples": 1106
+}

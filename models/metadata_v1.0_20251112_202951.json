@@ -1,0 +1,39 @@
+{
+  "model_version": "v1.0_20251112_202951",
+  "model_type": "RandomForestClassifier",
+  "training_date": "2025-11-12T20:29:51.377565",
+  "accuracy": 0.7807909604519774,
+  "precision": 0.7735563883662424,
+  "recall": 0.7807909604519774,
+  "f1_score": 0.7703781336373083,
+  "roc_auc": 0.0,
+  "best_sampling_technique": "Original (No Sampling)",
+  "target_classes": [
+    "Not Dropout",
+    "Dropout"
+  ],
+  "numerical_features": [
+    "Marital status",
+    "Application mode",
+    "Application order",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification",
+    "Nacionality",
+    "Mother's qualification",
+    "Father's qualification",
+    "Mother's occupation",
+    "Father's occupation",
+    "Displaced",
+    "Educational special needs",
+    "Debtor",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder",
+    "Age at enrollment",
+    "International"
+  ],
+  "categorical_features": [],
+  "optimal_threshold": 0.008324437286446005,
+  "ministry_target_recall": 0.85
+}
