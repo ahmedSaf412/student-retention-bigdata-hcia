@@ -7,10 +7,13 @@ data/*.csv
 # Ignore .ods files (OpenDocument)
 data/*.ods
 
-# Ignore system files
+# Ignore system and environment files
 __pycache__/
 *.pyc
 .venv/
 venv/
 .env
 .DS_Store
+.ipynb_checkpoints/
+archive.zip
+data/processed_student_data.parquet/

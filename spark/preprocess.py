@@ -9,8 +9,9 @@ from dotenv import load_dotenv # Import dotenv to load .env file
 load_dotenv()
 
 # Get the path to the data file directly
-DATA_PATH = os.getenv("DATA_PATH", "data/student_sample.csv")
-
+#DATA_PATH = os.getenv("DATA_PATH", "data/student_sample.csv")
+# Replace the line where DATA_PATH is defined with:
+DATA_PATH = "/opt/spark/data/student_sample.csv"
 def main():
     # Initialize Spark Session
     spark = SparkSession.builder \

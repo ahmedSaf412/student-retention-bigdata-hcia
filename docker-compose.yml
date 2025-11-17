@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  spark-master:
+    image: my-spark:3.5.3  # Changed from apache/spark:3.5.3
+    container_name: spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    command: /opt/spark/sbin/start-master.sh
+    volumes:
+      - ./data:/opt/spark/data
+      - ./models:/opt/spark/models
+      - ./spark:/opt/spark/spark_scripts
+    networks:
+      - spark-network
+
+  spark-worker:
+    image: my-spark:3.5.3  # Changed from apache/spark:3.5.3
+    container_name: spark-worker-1
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    command: /opt/spark/sbin/start-worker.sh spark://spark-master:7077
+    volumes:
+      - ./data:/opt/spark/data
+      - ./models:/opt/spark/models
+      - ./spark:/opt/spark/spark_scripts
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    driver: bridge
